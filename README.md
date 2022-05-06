@@ -1,21 +1,9 @@
 # Hermes
 ## Windows Keylogging Malware
 
-Keylogging malware that exfiltrates every key that the victim presses, 512 keys at a time. The keys 
-are XOR encrypted with a 64-byte, randomly generated key, and then sent over to an external C2 server.
-Basic functionality is all that has been implemented so far, this time without the CRT. 
-
-Hermes isn't *very* stealthy, for now, so a fairly competent user could still catch wind of something
-fishy going on with their machine. The traffic Hermes sends goes through port 80, so it looks like
-rudimentary HTTP data. Hermes is also discoverable in the Task Manager, so the next step in its 
-development is an implementation of process injection such that Anti-Viruses will not detect what 
-it's doing. 
-
-# UPDATE:
-I present to you the official first version of Hermes. There are a lot of things that could still be done, 
+This is the official first version of Hermes. There are a lot of things that could still be done, 
 but for the goal I had in mind for this project, I am satisfied. Any further adjustments and features could be built
-upon this version. I believe it serves as a great skeleton for a keylogger or any such spyware. Right then, let's
-dig into what's new.
+upon this version. I believe it serves as a great skeleton for a keylogger or any such spyware.
 
 ## Features
 - **Logging Keystrokes** : Hermes, as it is in this repository, is a relatively simple keylogger. As stated before, it records around 512 keys
@@ -48,16 +36,6 @@ Hermes' behaviour is more than likely to trigger some alarms, or, at the very le
 in and of itself enough of a flag, but Hermes, as it is now, blatantly hooks one kind of event: The keyboard. On top of that, it has a lot of the
 telltale features of malware; checks for the presence of a debugger, communication with a remote machine, creating and executing remote threads, etc.
 A lot of suspicion could be averted depending on how the executable is compiled, packed, and, optionally --if possible--, signed. 
-
-### TODO:
-* ~~Log keystrokes~~
-* ~~Translate keys from Virtual Key Codes~~
-* ~~Exfiltrate keys over the network~~
-* ~~Add basic encryption to key buffer during exfil~~
-* ~~Add cleanup routine~~
-* ~~Remove CRT (This was a first for me, but finally got it working with some guidance from Rez :) )~~
-* ~~Implement Process Injection for improved stealth~~
-* ~~Increase key buffer size UPDATE: I dediced to leave it as is~~
 
 ## Disclaimer:
 Hermes and all related malware that I create is the work of my curiosity and is created in the spirit of
